@@ -68,6 +68,29 @@ if config_env() == :prod do
     ],
     secret_key_base: secret_key_base
 
+  # JWT configuration for production
+  jwt_secret =
+    System.get_env("JWT_SECRET_KEY") ||
+      raise """
+      environment variable JWT_SECRET_KEY is missing.
+      You can generate one by calling: mix phx.gen.secret
+      """
+
+  config :backend, Backend.Auth.Token,
+    secret_key: jwt_secret
+
+  # BREVO (Sendinblue) mailer configuration
+  if brevo_api_key = System.get_env("BREVO_API_KEY") do
+    config :backend, Backend.Mailer,
+      adapter: Swoosh.Adapters.Sendinblue,
+      api_key: brevo_api_key
+  end
+
+  # Mailer sender configuration
+  config :backend, :mailer_from,
+    name: System.get_env("MAILER_FROM_NAME", "Buenos Aires Street Art"),
+    email: System.get_env("MAILER_FROM_EMAIL", "noreply@streetart.com")
+
   # ## SSL Support
   #
   # To get SSL working, you will need to add the `https` key

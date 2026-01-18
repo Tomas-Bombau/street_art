@@ -1,34 +1,210 @@
 @import "tailwindcss";
 
 @theme {
+  /* Kobra-inspired color palette */
   --color-background: hsl(0 0% 100%);
-  --color-foreground: hsl(0 0% 3.9%);
+  --color-foreground: hsl(210 29% 22%);
   --color-card: hsl(0 0% 100%);
-  --color-card-foreground: hsl(0 0% 3.9%);
+  --color-card-foreground: hsl(210 29% 22%);
   --color-popover: hsl(0 0% 100%);
-  --color-popover-foreground: hsl(0 0% 3.9%);
-  --color-primary: hsl(0 0% 9%);
-  --color-primary-foreground: hsl(0 0% 98%);
-  --color-secondary: hsl(0 0% 96.1%);
-  --color-secondary-foreground: hsl(0 0% 9%);
-  --color-muted: hsl(0 0% 96.1%);
-  --color-muted-foreground: hsl(0 0% 45.1%);
-  --color-accent: hsl(0 0% 96.1%);
-  --color-accent-foreground: hsl(0 0% 9%);
-  --color-destructive: hsl(0 84.2% 60.2%);
-  --color-destructive-foreground: hsl(0 0% 98%);
-  --color-border: hsl(0 0% 89.8%);
-  --color-input: hsl(0 0% 89.8%);
-  --color-ring: hsl(0 0% 3.9%);
-  --radius: 0.5rem;
+  --color-popover-foreground: hsl(210 29% 22%);
+
+  /* Primary: Vibrant Pink */
+  --color-primary: hsl(333 86% 65%);
+  --color-primary-foreground: hsl(0 0% 100%);
+
+  /* Secondary: Muted teal */
+  --color-secondary: hsl(174 50% 39%);
+  --color-secondary-foreground: hsl(0 0% 100%);
+
+  /* Muted */
+  --color-muted: hsl(0 0% 96%);
+  --color-muted-foreground: hsl(210 29% 32%);
+
+  /* Accent: Bold Purple */
+  --color-accent: hsl(270 77% 62%);
+  --color-accent-foreground: hsl(0 0% 100%);
+
+  /* Destructive: Kobra Red */
+  --color-destructive: hsl(355 82% 56%);
+  --color-destructive-foreground: hsl(0 0% 100%);
+
+  --color-border: hsl(210 29% 22%);
+  --color-input: hsl(0 0% 90%);
+  --color-ring: hsl(333 86% 65%);
+
+  /* Kobra rainbow palette */
+  --color-kobra-red: #E63946;
+  --color-kobra-orange: #F4A261;
+  --color-kobra-yellow: #E9C46A;
+  --color-kobra-green: #2A9D8F;
+  --color-kobra-teal: #264653;
+  --color-kobra-blue: #457B9D;
+  --color-kobra-purple: #9B5DE5;
+  --color-kobra-pink: #F15BB5;
+  --color-kobra-white: #FFFFFF;
+
+  --radius: 0;
+
+  /* Typography - clean modern fonts for Kobra style */
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-geometric: 'Space Grotesk', sans-serif;
+  --font-body: 'Space Grotesk', sans-serif;
 }
 
 @layer base {
   * {
     border-color: var(--color-border);
   }
+
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+  /* Kobra-style geometric borders */
+  .kobra-border {
+    border: 3px solid var(--color-kobra-teal);
+    box-shadow: 4px 4px 0 var(--color-kobra-purple);
+  }
+
+  .kobra-border-thick {
+    border: 5px solid var(--color-kobra-teal);
+    box-shadow: 6px 6px 0 var(--color-kobra-pink);
+  }
+
+  .kobra-border-soft {
+    border: 2px solid var(--color-kobra-teal);
+    box-shadow: 3px 3px 0 rgba(38, 70, 83, 0.3);
+  }
+
+  /* Geometric font style */
+  .geometric {
+    font-family: var(--font-geometric);
+    font-weight: 700;
+  }
+
+  /* Faceted/kaleidoscopic background patterns */
+  .kaleidoscope-bg {
+    background-image:
+      linear-gradient(60deg, var(--color-kobra-red) 0%, var(--color-kobra-orange) 16.67%, var(--color-kobra-yellow) 33.33%, var(--color-kobra-green) 50%, var(--color-kobra-blue) 66.67%, var(--color-kobra-purple) 83.33%, var(--color-kobra-pink) 100%);
+  }
+
+  /* Diamond pattern background */
+  .diamond-bg {
+    background-image:
+      linear-gradient(45deg, transparent 48%, var(--color-kobra-purple) 49%, var(--color-kobra-purple) 51%, transparent 52%),
+      linear-gradient(-45deg, transparent 48%, var(--color-kobra-pink) 49%, var(--color-kobra-pink) 51%, transparent 52%),
+      linear-gradient(135deg, transparent 48%, var(--color-kobra-blue) 49%, var(--color-kobra-blue) 51%, transparent 52%),
+      linear-gradient(-135deg, transparent 48%, var(--color-kobra-green) 49%, var(--color-kobra-green) 51%, transparent 52%);
+    background-size: 30px 30px;
+  }
+
+  /* Geometric text decoration */
+  .geometric-underline {
+    background-image: linear-gradient(90deg, var(--color-kobra-red), var(--color-kobra-orange), var(--color-kobra-yellow), var(--color-kobra-green), var(--color-kobra-blue), var(--color-kobra-purple), var(--color-kobra-pink));
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 100% 4px;
+    padding-bottom: 6px;
+  }
+}
+
+@layer utilities {
+  /* Kobra color utilities */
+  .bg-kobra-red { background-color: var(--color-kobra-red); }
+  .bg-kobra-orange { background-color: var(--color-kobra-orange); }
+  .bg-kobra-yellow { background-color: var(--color-kobra-yellow); }
+  .bg-kobra-green { background-color: var(--color-kobra-green); }
+  .bg-kobra-teal { background-color: var(--color-kobra-teal); }
+  .bg-kobra-blue { background-color: var(--color-kobra-blue); }
+  .bg-kobra-purple { background-color: var(--color-kobra-purple); }
+  .bg-kobra-pink { background-color: var(--color-kobra-pink); }
+
+  .text-kobra-red { color: var(--color-kobra-red); }
+  .text-kobra-orange { color: var(--color-kobra-orange); }
+  .text-kobra-yellow { color: var(--color-kobra-yellow); }
+  .text-kobra-green { color: var(--color-kobra-green); }
+  .text-kobra-teal { color: var(--color-kobra-teal); }
+  .text-kobra-blue { color: var(--color-kobra-blue); }
+  .text-kobra-purple { color: var(--color-kobra-purple); }
+  .text-kobra-pink { color: var(--color-kobra-pink); }
+
+  .border-kobra-red { border-color: var(--color-kobra-red); }
+  .border-kobra-orange { border-color: var(--color-kobra-orange); }
+  .border-kobra-yellow { border-color: var(--color-kobra-yellow); }
+  .border-kobra-green { border-color: var(--color-kobra-green); }
+  .border-kobra-teal { border-color: var(--color-kobra-teal); }
+  .border-kobra-blue { border-color: var(--color-kobra-blue); }
+  .border-kobra-purple { border-color: var(--color-kobra-purple); }
+  .border-kobra-pink { border-color: var(--color-kobra-pink); }
+
+  /* Rainbow gradient utilities */
+  .bg-kobra-gradient {
+    background: linear-gradient(90deg, var(--color-kobra-red), var(--color-kobra-orange), var(--color-kobra-yellow), var(--color-kobra-green), var(--color-kobra-blue), var(--color-kobra-purple), var(--color-kobra-pink));
+  }
+
+  .bg-kobra-gradient-vertical {
+    background: linear-gradient(180deg, var(--color-kobra-red), var(--color-kobra-orange), var(--color-kobra-yellow), var(--color-kobra-green), var(--color-kobra-blue), var(--color-kobra-purple), var(--color-kobra-pink));
+  }
+
+  .bg-kobra-gradient-diagonal {
+    background: linear-gradient(45deg, var(--color-kobra-red), var(--color-kobra-orange), var(--color-kobra-yellow), var(--color-kobra-green), var(--color-kobra-blue), var(--color-kobra-purple), var(--color-kobra-pink));
+  }
+
+  .text-kobra-gradient {
+    background: linear-gradient(90deg, var(--color-kobra-red), var(--color-kobra-orange), var(--color-kobra-yellow), var(--color-kobra-green), var(--color-kobra-blue), var(--color-kobra-purple), var(--color-kobra-pink));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Animation utilities */
+  .animate-pulse-colors {
+    animation: pulse-colors 3s ease-in-out infinite;
+  }
+
+  @keyframes pulse-colors {
+    0%, 100% { filter: hue-rotate(0deg); }
+    50% { filter: hue-rotate(30deg); }
+  }
+
+  .animate-shimmer {
+    animation: shimmer 2s linear infinite;
+    background-size: 200% 100%;
+  }
+
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+
+  /* Geometric shape decorations */
+  .geometric-triangle::before {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 17px solid currentColor;
+    margin-right: 0.5rem;
+  }
+
+  .geometric-diamond::before {
+    content: '';
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background: currentColor;
+    transform: rotate(45deg);
+    margin-right: 0.5rem;
   }
 }

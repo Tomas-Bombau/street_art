@@ -31,6 +31,9 @@ config :backend, BackendWeb.Endpoint,
 # at the `config/runtime.exs`.
 config :backend, Backend.Mailer, adapter: Swoosh.Adapters.Local
 
+# Configure Swoosh API client (required for non-SMTP adapters like Brevo/Sendinblue)
+config :swoosh, :api_client, Swoosh.ApiClient.Req
+
 # Configure Elixir's Logger
 config :logger, :default_formatter,
   format: "$time $metadata[$level] $message\n",

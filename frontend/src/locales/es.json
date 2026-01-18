@@ -1,0 +1,76 @@
+{
+  "landing": {
+    "title": "BUENOS AIRES",
+    "subtitle": "Street Art",
+    "description": "Descubrí y compartí los murales de",
+    "caba": "CABA",
+    "and": "y",
+    "province": "Provincia de Buenos Aires",
+    "addMural": "AGREGAR MURAL",
+    "viewMurals": "VER MURALES",
+    "cabaLabel": "Capital Federal",
+    "gbaLabel": "Gran Buenos Aires",
+    "freeLabel": "Colaborativo"
+  },
+  "murals": {
+    "title": "MURALES",
+    "subtitle": "Arte Urbano de Buenos Aires",
+    "viewMap": "Ver Mapa",
+    "addMural": "Agregar Mural",
+    "loading": "Cargando murales...",
+    "noMurals": "No se encontraron murales",
+    "noMuralsHint": "Probá ajustando los filtros o sé el primero en agregar un mural!",
+    "addFirstMural": "Agregar Primer Mural",
+    "showing": "Mostrando {{count}} de {{total}} murales"
+  },
+  "map": {
+    "title": "VISTA MAPA",
+    "subtitle": "Explorá murales por Buenos Aires",
+    "listView": "VISTA LISTA",
+    "loading": "Cargando mapa...",
+    "apiKeyRequired": "Se requiere API Key de Google Maps",
+    "apiKeyHint": "Por favor configurá VITE_GOOGLE_MAPS_API_KEY",
+    "backToList": "Volver a Lista",
+    "muralsOnMap": "murales en el mapa"
+  },
+  "notFound": {
+    "title": "404",
+    "message": "Este mural no existe... todavía",
+    "subtitle": "PÁGINA NO ENCONTRADA",
+    "backHome": "VOLVER AL INICIO"
+  },
+  "modal": {
+    "title": "AGREGAR MURAL",
+    "photo": "Foto del Mural",
+    "clickUpload": "Click para subir",
+    "uploadHint": "JPG, PNG o WebP (máx 10MB)",
+    "uploaded": "Subida",
+    "email": "Tu Email",
+    "emailPlaceholder": "tu@email.com",
+    "emailHint": "Te notificaremos cuando tu envío sea revisado.",
+    "location": "Ubicación",
+    "locationHint": "Buscá una dirección o hacé click en el mapa para marcar la ubicación.",
+    "searchAddress": "Buscar dirección...",
+    "gettingAddress": "Obteniendo dirección...",
+    "apiKeyRequired": "Se requiere API Key de Google Maps",
+    "cancel": "Cancelar",
+    "submit": "Enviar Mural",
+    "submitting": "Enviando..."
+  },
+  "filters": {
+    "title": "FILTROS",
+    "searchByName": "Buscar por Nombre",
+    "namePlaceholder": "Nombre del mural...",
+    "province": "Provincia",
+    "allProvinces": "Todas las provincias",
+    "municipality": "Municipio",
+    "allMunicipalities": "Todos los municipios",
+    "neighborhood": "Barrio",
+    "allNeighborhoods": "Todos los barrios",
+    "clearFilters": "Limpiar Filtros"
+  },
+  "common": {
+    "loading": "Cargando...",
+    "error": "Error"
+  }
+}
